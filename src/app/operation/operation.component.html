@@ -1,0 +1,22 @@
+<div>
+  <div>
+    <form>
+      <label>代码根目录</label>
+      <input type="text">
+      <button>..</button>
+    </form>
+  </div>
+  <div>
+
+    <select>
+      <option>master => release</option>
+      <option>release => master</option>
+    </select>
+  </div>
+  <div>
+    <button (click)="check_conflict()">冲突检测</button>
+    <button (click)="do_merge()">merge</button>
+    <button (click)="do_push()">push</button>
+  </div>
+
+</div>
