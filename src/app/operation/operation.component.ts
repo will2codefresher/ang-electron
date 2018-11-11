@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ChildProcessService} from 'ngx-childprocess';
+
 
 @Component({
   selector: 'app-operation',
@@ -6,8 +8,11 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./operation.component.scss']
 })
 export class OperationComponent implements OnInit {
+  result: string;
+  cmd: string = '';
 
-  constructor() {
+  constructor(private childProcessService: ChildProcessService) {
+    this.result = '未有执行结果';
   }
 
   ngOnInit() {
@@ -22,6 +27,14 @@ export class OperationComponent implements OnInit {
   }
 
   do_push() {
-    alert('push');
+    this.run_cmd('echo aaa');
   }
+
+  run_cmd(command: string) {
+    this.childProcessService.childProcess.exec(command, [], function (data) {
+      alert(data);
+      this.result = data;
+    });
+  }
+
 }
