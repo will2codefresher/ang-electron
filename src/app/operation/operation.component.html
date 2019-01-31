@@ -1,30 +1,34 @@
-<div>
-  <div>
-    <form>
-      <label>代码根目录</label>
-      <input type="text">
-      <button>..</button>
-    </form>
+<form role="form">
+  <div class="form-group">
+    <label for="codeRootPath" class="col-md-2">代码根目录</label>
+    <input id="codeRootPath" class="col-md-10" [formControl]="codeRootPath">
+    <button>..</button>
   </div>
-  <div>
 
-    <select>
-      <option>master => release</option>
-      <option>release => master</option>
-    </select>
+  <div class="form-group">
+    <label for="fromBranch">from</label>
+    <input id="fromBranch" [formControl]="fromBranch">
   </div>
-  <div>
+  <div class="form-group">
+    <label for="toBranch">to</label>
+    <input id="toBranch" [formControl]="toBranch">
+  </div>
+  <div class="form-group">
     <button (click)="check_conflict()">冲突检测</button>
     <button (click)="do_merge()">merge</button>
     <button (click)="do_push()">push</button>
   </div>
-  <div>
-    <label>command</label>
-    <input type="text" #command>
+  <div class="form-group">
+    <label for="command">command</label>
+    <input id="command" name="command" #command [formControl]="command">
     <button (click)="run_cmd(command.value)">执行</button>
   </div>
-  <div>
-    <h4>{{result}}</h4>
+  <div class="form-group">
+    <label for="result">执行结果</label>
+    <textarea id="result">{{result  |json}}</textarea>
+    <!--<h4>{{result | json}}</h4>-->
+    <!--<h5>{{stdout}}</h5>-->
+    <!--<h6>{{stderr}}</h6>-->
+    <!--<span>{{error}}</span>-->
   </div>
-
-</div>
+</form>
