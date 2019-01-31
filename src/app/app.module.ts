@@ -6,11 +6,15 @@ import {AppComponent} from './app.component';
 import {OperationComponent} from './operation/operation.component';
 import {NgxChildProcessModule} from 'ngx-childprocess';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RepoListComponent } from './app/repo-list/repo-list.component';
+import { RepoListItemComponent } from './repo-list/repo-list-item/repo-list-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OperationComponent
+    OperationComponent,
+    RepoListComponent,
+    RepoListItemComponent
   ],
   imports: [
     BrowserModule,

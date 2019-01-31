@@ -26,6 +26,7 @@
     "bootstrap": "^4.2.1",
     "child_process": "^1.0.2",
     "core-js": "^2.5.4",
+    "ng-cli": "^0.7.0",
     "ngx-childprocess": "0.0.6",
     "node-cmd": "^3.0.0",
     "node-sass": "^4.11.0",
